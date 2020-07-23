@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Empleados <small>Operaciones CRUD-L de los Empleados</small></h1>
+  </div>
+  <hr>
+  <div class="row">
+    <app-empleado-form [empleado]="mainEmpleado" [title]="mainTitle" (flagToReload)="toReload($event)">
+      </app-empleado-form>
+      <hr>
+      <app-empleado-list (empleadoToEdit)="toUpdate($event)" [flagToReload]="mainReload" (reloadComplete)="reloadDone($event)"> </app-empleado-list>
+  </div>
+  <hr>
+</div>

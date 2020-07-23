@@ -1,0 +1,43 @@
+<div>
+    <div class="text-center">
+        <fa-icon class="fa-2x" [icon]="faListAlt"></fa-icon>    
+    </div>
+    <hr>
+    <h5>Listado de Empleados</h5>
+    <table class="table table-hover">
+        <thead class="bg-info">
+            <tr>
+                <th>
+                    Nombres
+                </th>
+                <th>
+                    Apellidos
+                </th>
+                <th>
+                    Cédula
+                </th>          
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>        
+                <tr *ngFor="let item of empleados;">
+        
+                    <td>
+                        {{item.nombre_completo}}
+                    </td>
+                    <td> 
+                        {{item.cedula}}
+                    </td>
+                    <td>
+                        {{item.area_trabajo}}    
+                    </td>                
+                    <td class="btn-group">
+                        <button [routerLink]="['/empleados', item.idempleado]" class="btn btn-sm btn-info" ><fa-icon [icon]="faEye"></fa-icon></button>                    
+                        <button (click)="update(item)" class="btn btn-sm btn-warning" ><fa-icon [icon]="faPencilAlt"></fa-icon></button>
+                        <button (click)="delete(item)" class="btn btn-sm btn-danger" ><fa-icon [icon]="faTrash"></fa-icon></button>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+    </div>
